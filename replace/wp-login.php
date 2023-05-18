@@ -12,7 +12,8 @@
 $cookieName= 'secretCookieName';
 
 if ( !isset( $_COOKIE[$cookieName] )) {
- exit();
+	if (!file_exists('.allownocookie'))
+		exit();
 }
 
 
